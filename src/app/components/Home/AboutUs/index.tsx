@@ -262,14 +262,14 @@ const Aboutus = () => {
         </div>
 
         {/* Closing Statement */}
-        <div className="mx-auto mt-16 max-w-4xl text-center">
+        {/* <div className="mx-auto mt-16 max-w-4xl text-center">
           <h3 className="leading-tight">
             Your Product.
             <span className="text-primary"> Our Strategy.</span>
             <br />
             Your Growth.
           </h3>
-        </div>
+        </div> */}
 
       </div>
     </section>
