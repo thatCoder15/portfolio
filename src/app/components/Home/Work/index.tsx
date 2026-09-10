@@ -667,6 +667,9 @@ const brands = [
   { name: 'MaheTri', logo: '/images/brands/brand-07.png' },
   { name: 'SALTY', logo: '/images/brands/brand-08.png' },
   { name: 'iSTAR', logo: '/images/brands/brand-09.png' },
+  { name: 'On Time Octus', logo: '/images/brands/brand-10.png' },
+  { name: 'Delavala', logo: '/images/brands/brand-11.png' },
+  { name: 'Vyoox', logo: '/images/brands/brand-12.png' },
 ]
 
 const BrandCard = ({
@@ -677,39 +680,51 @@ const BrandCard = ({
   index: number
 }) => {
   return (
-    <div className="mx-1.5 w-[165px] shrink-0 sm:mx-2 sm:w-[185px]">
-      <motion.div
-        animate={{
-          y: [0, -2, 0, 2, 0],
-        }}
-        transition={{
-          duration: 5 + index * 0.3,
-          repeat: Infinity,
-          ease: 'easeInOut',
-          delay: index * 0.2,
-        }}
-        className="group relative h-[98px] overflow-hidden rounded-[16px] border border-primary/[0.12] bg-white shadow-[0_8px_25px_rgba(249,115,22,0.07),0_3px_12px_rgba(0,0,0,0.035)] transition-all duration-500 hover:-translate-y-1 hover:border-primary/[0.35] hover:shadow-[0_18px_45px_rgba(249,115,22,0.22),0_8px_25px_rgba(249,115,22,0.12)] sm:h-[106px]"
+    <motion.div
+      initial={{ opacity: 0, y: 25 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{
+        duration: 0.55,
+        delay: index * 0.05,
+        ease: 'easeOut',
+      }}
+      whileHover={{ y: -8 }}
+      className="group relative"
+    >
+      <div
+        className="
+          relative
+          h-[155px]
+          overflow-hidden
+          rounded-[22px]
+          border border-black/[0.07]
+          bg-white
+          shadow-[0_8px_30px_rgba(0,0,0,0.045)]
+          transition-all
+          duration-500
+          group-hover:border-primary/30
+          group-hover:shadow-[0_20px_50px_rgba(249,115,22,0.18)]
+          sm:h-[175px]
+        "
       >
-        {/* Ambient Orange Glow */}
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.035, 0.1, 0.035],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: index * 0.25,
-          }}
-          className="absolute -right-10 -top-10 z-0 h-28 w-28 rounded-full bg-primary blur-3xl"
-        />
 
-        {/* Bottom Orange Glow */}
+        {/* Ambient Glow */}
         <motion.div
+          className="
+            pointer-events-none
+            absolute
+            -right-12
+            -top-12
+            h-32
+            w-32
+            rounded-full
+            bg-primary
+            blur-3xl
+          "
           animate={{
-            opacity: [0.02, 0.07, 0.02],
-            scaleX: [0.8, 1.15, 0.8],
+            scale: [1, 1.15, 1],
+            opacity: [0.025, 0.07, 0.025],
           }}
           transition={{
             duration: 4,
@@ -717,266 +732,315 @@ const BrandCard = ({
             ease: 'easeInOut',
             delay: index * 0.15,
           }}
-          className="absolute -bottom-5 left-1/2 z-0 h-10 w-28 -translate-x-1/2 rounded-full bg-primary blur-2xl"
         />
 
-        {/* ============================= */}
-        {/* FIRE / FLAME HOVER EFFECT */}
-        {/* ============================= */}
-
-        {/* Main Fire Glow */}
+        {/* Hover Fire Glow */}
         <motion.div
-          initial={{
-            opacity: 0,
-            scale: 0.55,
-          }}
+          className="
+            pointer-events-none
+            absolute
+            left-1/2
+            top-1/2
+            h-24
+            w-24
+            -translate-x-1/2
+            -translate-y-1/2
+            rounded-full
+            bg-primary/40
+            blur-[28px]
+          "
+          initial={{ opacity: 0, scale: 0.4 }}
           whileHover={{
             opacity: 1,
-            scale: 1,
+            scale: 1.35,
           }}
           transition={{
-            duration: 0.45,
+            duration: 0.5,
             ease: 'easeOut',
           }}
-          className="pointer-events-none absolute left-1/2 top-1/2 z-[1] h-[76px] w-[76px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/35 blur-[20px]"
         />
 
-        {/* Fire Core */}
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 0.4,
-          }}
-          whileHover={{
-            opacity: [0.35, 0.75, 0.4],
-            scale: [0.75, 1.15, 0.9],
-          }}
-          transition={{
-            duration: 1.1,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="pointer-events-none absolute left-1/2 top-1/2 z-[2] h-[55px] w-[55px] -translate-x-1/2 -translate-y-1/2 rounded-[45%] bg-gradient-to-t from-primary via-orange-400/60 to-yellow-300/20 blur-[10px]"
-        />
+        {/* Fire Particles */}
+        <div className="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          {[...Array(7)].map((_, i) => (
+            <motion.span
+              key={i}
+              className="absolute h-1.5 w-1.5 rounded-full bg-primary"
+              style={{
+                left: `${25 + i * 8}%`,
+                top: `${55 - (i % 3) * 8}%`,
+              }}
+              animate={{
+                y: [0, -25 - (i % 3) * 12, -45],
+                x: [0, (i % 2 ? 8 : -8), i % 2 ? 14 : -14],
+                opacity: [0, 0.8, 0],
+                scale: [0.5, 1, 0.2],
+              }}
+              transition={{
+                duration: 1 + (i % 3) * 0.2,
+                repeat: Infinity,
+                delay: i * 0.08,
+                ease: 'easeOut',
+              }}
+            />
+          ))}
+        </div>
 
-        {/* Flame Tendrils */}
-        <motion.div
-          initial={{
-            opacity: 0,
-          }}
-          whileHover={{
-            opacity: 1,
-          }}
-          transition={{
-            duration: 0.3,
-          }}
-          className="pointer-events-none absolute inset-0 z-[1]"
-        >
-          <motion.span
-            animate={{
-              y: [4, -7, 3],
-              x: [-2, 4, -2],
-              scaleY: [1, 1.3, 0.9],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 1.1,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-            className="absolute left-[38%] top-[25%] h-[48px] w-[13px] rotate-[18deg] rounded-full bg-gradient-to-t from-primary via-orange-400 to-yellow-300/20 blur-[5px]"
-          />
-
-          <motion.span
-            animate={{
-              y: [-2, -10, 2],
-              x: [3, -3, 2],
-              scaleY: [0.9, 1.35, 1],
-              opacity: [0.25, 0.65, 0.25],
-            }}
-            transition={{
-              duration: 1.3,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: 0.15,
-            }}
-            className="absolute left-[52%] top-[20%] h-[52px] w-[14px] -rotate-[15deg] rounded-full bg-gradient-to-t from-primary via-orange-400 to-yellow-300/10 blur-[5px]"
-          />
-
-          <motion.span
-            animate={{
-              y: [3, -8, 4],
-              x: [-1, 4, -1],
-              scaleY: [1, 1.25, 0.9],
-              opacity: [0.25, 0.6, 0.25],
-            }}
-            transition={{
-              duration: 1.25,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: 0.3,
-            }}
-            className="absolute left-[61%] top-[28%] h-[42px] w-[11px] rotate-[20deg] rounded-full bg-gradient-to-t from-primary via-orange-500 to-yellow-300/10 blur-[5px]"
-          />
-        </motion.div>
-
-        {/* ============================= */}
-        {/* MARVELOUS BACKGROUND */}
-        {/* ============================= */}
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            scale: 0.75,
-          }}
-          whileHover={{
-            opacity: 0.14,
-            scale: 1.08,
-          }}
-          transition={{
-            duration: 0.65,
-            ease: 'easeOut',
-          }}
-          className="pointer-events-none absolute left-1/2 top-1/2 z-[3] -translate-x-1/2 -translate-y-1/2 whitespace-nowrap text-[34px] font-black uppercase tracking-[-0.07em] text-primary sm:text-[39px]"
-        >
-          MARVELOUS
-        </motion.div>
-
-        {/* ============================= */}
-        {/* BRAND NUMBER */}
-        {/* ============================= */}
-
-        <span className="absolute left-3 top-2.5 z-20 text-[8px] font-bold tracking-[0.18em] text-black/25 sm:text-[9px]">
+        {/* Number */}
+        <span className="absolute left-4 top-4 z-20 text-[9px] font-bold tracking-[0.2em] text-black/20">
           {String(index + 1).padStart(2, '0')}
         </span>
 
-        {/* Partner Indicator */}
-        <div className="absolute right-3 top-2.5 z-20 flex items-center gap-1.5">
+        {/* Partner */}
+        <div className="absolute right-4 top-4 z-20 flex items-center gap-1.5">
           <motion.span
+            className="h-1.5 w-1.5 rounded-full bg-primary"
             animate={{
               scale: [1, 1.5, 1],
-              opacity: [0.3, 1, 0.3],
+              opacity: [0.35, 1, 0.35],
             }}
             transition={{
-              duration: 1.6,
+              duration: 1.8,
               repeat: Infinity,
-              delay: index * 0.2,
+              delay: index * 0.1,
             }}
-            className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_7px_rgba(249,115,22,0.55)]"
           />
 
-          <span className="text-[7px] font-bold uppercase tracking-[0.14em] text-black/25 sm:text-[8px]">
+          <span className="text-[7px] font-bold uppercase tracking-[0.16em] text-black/25">
             Partner
           </span>
         </div>
 
-        {/* ============================= */}
-        {/* 3D LOGO FLIP */}
-        {/* ============================= */}
+        {/* Logo Area */}
+       
+{/* Logo Area */}
+<div className="absolute inset-x-0 top-0 flex h-[115px] items-center justify-center px-8 pt-4 sm:h-[132px]">
 
-        <div
-          className="absolute inset-0 z-10 flex items-center justify-center pb-2 pt-3"
-          style={{
-            perspective: '700px',
-          }}
-        >
-          <motion.div
-            animate={{
-              scale: [1, 1.025, 1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: index * 0.2,
-            }}
-            className="relative transition-transform duration-700 ease-out [transform-style:preserve-3d] group-hover:scale-[1.16] group-hover:[transform:rotateY(360deg)]"
-          >
-            {/* Logo Glow Behind */}
-            <div className="absolute inset-0 scale-[0.8] rounded-full bg-primary/20 opacity-0 blur-xl transition-all duration-500 group-hover:scale-[1.4] group-hover:opacity-100" />
+  {/* Logo Glow */}
+  <div
+    className="
+      pointer-events-none
+      absolute
+      h-24
+      w-24
+      rounded-full
+      bg-primary/15
+      opacity-0
+      blur-2xl
+      transition-all
+      duration-500
+      group-hover:scale-150
+      group-hover:opacity-100
+    "
+  />
 
-            <Image
-              src={brand.logo}
-              alt={`${brand.name} logo`}
-              width={170}
-              height={70}
-              className="relative z-10 max-h-[48px] w-auto max-w-[125px] object-contain drop-shadow-[0_3px_7px_rgba(0,0,0,0.05)] transition-all duration-700 group-hover:drop-shadow-[0_8px_18px_rgba(249,115,22,0.4)] sm:max-h-[52px] sm:max-w-[135px]"
-            />
-          </motion.div>
-        </div>
+  <motion.div
+    className="
+      relative
+      z-10
+      flex
+      h-[76px]
+      w-[76px]
+      items-center
+      justify-center
+      overflow-hidden
+      rounded-full
+      border
+      border-black/[0.07]
+      bg-white
+      shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+      transition-all
+      duration-500
+      group-hover:border-primary/30
+      group-hover:shadow-[0_10px_30px_rgba(249,115,22,0.18)]
+      sm:h-[88px]
+      sm:w-[88px]
+    "
+    whileHover={{
+      scale: 1.08,
+      rotate: 2,
+    }}
+    transition={{
+      type: 'spring',
+      stiffness: 250,
+      damping: 15,
+    }}
+  >
 
-        {/* Hover Ring */}
+    {/* Inner Ring */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        inset-[4px]
+        rounded-full
+        border
+        border-black/[0.045]
+        transition-all
+        duration-500
+        group-hover:border-primary/20
+      "
+    />
+
+    {/* Logo */}
+    <Image
+      src={brand.logo}
+      alt={`${brand.name} logo`}
+      width={120}
+      height={120}
+      className="
+        relative
+        z-10
+        h-[52px]
+        w-[52px]
+        rounded-full
+        object-contain
+        p-2
+        transition-all
+        duration-500
+        group-hover:scale-110
+        group-hover:drop-shadow-[0_6px_15px_rgba(249,115,22,0.25)]
+        sm:h-[62px]
+        sm:w-[62px]
+      "
+    />
+
+    {/* Subtle Shine */}
+    <motion.div
+      initial={{ x: '-150%', rotate: 25 }}
+      whileHover={{ x: '150%' }}
+      transition={{
+        duration: 0.7,
+        ease: 'easeInOut',
+      }}
+      className="
+        pointer-events-none
+        absolute
+        inset-y-0
+        z-20
+        w-5
+        bg-gradient-to-r
+        from-transparent
+        via-white/70
+        to-transparent
+        blur-[2px]
+      "
+    />
+
+  </motion.div>
+</div>
+
+
+
+        {/* Hover Shine */}
         <motion.div
-          initial={{
-            scale: 0.4,
-            opacity: 0,
-          }}
-          whileHover={{
-            scale: 1,
-            opacity: 1,
-          }}
+          initial={{ x: '-180%' }}
+          whileHover={{ x: '300%' }}
           transition={{
-            duration: 0.7,
-            ease: 'easeOut',
+            duration: 0.8,
+            ease: 'easeInOut',
           }}
-          className="pointer-events-none absolute left-1/2 top-1/2 z-[4] h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/30 group-hover:h-[88px] group-hover:w-[88px]"
+          className="
+            pointer-events-none
+            absolute
+            inset-y-0
+            z-30
+            w-[35%]
+            -skew-x-[20deg]
+            bg-gradient-to-r
+            from-transparent
+            via-white/70
+            to-transparent
+          "
         />
 
-        {/* Bottom Brand Info */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between border-t border-primary/[0.08] bg-white/92 px-3 py-1.5 backdrop-blur-sm transition-all duration-500 group-hover:border-primary/25 group-hover:bg-white/95 sm:px-3.5 sm:py-2">
-          <span className="truncate pr-2 text-[12px] font-bold uppercase tracking-[0.08em] text-black/50 transition-colors duration-500 group-hover:text-primary sm:text-[13px] sm:tracking-[0.1em]">
-            {brand.name}
-          </span>
+        {/* Bottom Info */}
+        <div
+          className="
+            absolute
+            bottom-0
+            left-0
+            right-0
+            z-20
+            flex
+            items-center
+            justify-between
+            border-t
+            border-black/[0.06]
+            bg-white/90
+            px-4
+            py-3
+            backdrop-blur-md
+            transition-all
+            duration-500
+            group-hover:border-primary/20
+            group-hover:bg-white
+          "
+        >
+          <div>
+            <span className="block text-[8px] font-semibold uppercase tracking-[0.18em] text-black/25">
+              Brand
+            </span>
 
-          {/* Orange Arrow */}
+            <span className="mt-0.5 block truncate text-[13px] font-bold uppercase tracking-[0.08em] text-black/55 transition-colors duration-300 group-hover:text-primary sm:text-[14px]">
+              {brand.name}
+            </span>
+          </div>
+
+          {/* Arrow */}
           <motion.span
-            animate={{
-              x: [0, 3, 0],
-              opacity: [0.5, 1, 0.5],
-              scale: [1, 1.12, 1],
+            className="
+              flex
+              h-7
+              w-7
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-primary/20
+              bg-primary/[0.06]
+              text-[14px]
+              text-primary
+              transition-all
+              duration-300
+              group-hover:border-primary
+              group-hover:bg-primary
+              group-hover:text-white
+              group-hover:shadow-[0_0_18px_rgba(249,115,22,0.45)]
+            "
+            whileHover={{
+              rotate: 45,
+              scale: 1.1,
             }}
-            transition={{
-              duration: 2.4,
-              repeat: Infinity,
-              ease: 'easeInOut',
-              delay: index * 0.15,
-            }}
-            className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-primary/25 bg-primary/[0.09] text-[13px] font-semibold leading-none text-primary shadow-[0_3px_10px_rgba(249,115,22,0.15)] transition-all duration-500 group-hover:border-primary/40 group-hover:bg-primary group-hover:text-white group-hover:shadow-[0_0_15px_rgba(249,115,22,0.5)] sm:h-[23px] sm:w-[23px] sm:text-[14px]"
           >
             ↗
           </motion.span>
         </div>
 
-        {/* Animated Orange Bottom Line */}
+        {/* Animated Orange Border */}
         <motion.div
+          className="
+            absolute
+            bottom-0
+            left-0
+            z-40
+            h-[2px]
+            bg-primary
+            shadow-[0_0_12px_rgba(249,115,22,0.7)]
+          "
+          initial={{ width: '10%' }}
           animate={{
-            width: ['15%', '70%', '15%'],
+            width: ['10%', '35%', '10%'],
           }}
           transition={{
-            duration: 4,
+            duration: 3.5,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: index * 0.2,
+            delay: index * 0.15,
           }}
-          className="absolute bottom-0 left-0 z-30 h-[2px] bg-primary shadow-[0_0_10px_rgba(249,115,22,0.65)]"
         />
-
-        {/* Hover Shine */}
-        <motion.div
-          initial={{
-            x: '-180%',
-          }}
-          whileHover={{
-            x: '300%',
-          }}
-          transition={{
-            duration: 0.8,
-            ease: 'easeInOut',
-          }}
-          className="pointer-events-none absolute inset-y-0 z-40 w-[30%] -skew-x-[20deg] bg-gradient-to-r from-transparent via-white/70 to-transparent"
-        />
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   )
 }
 
@@ -986,8 +1050,11 @@ const Work = () => {
       id="Brands"
       className="relative overflow-hidden py-16 lg:py-20"
     >
-      {/* Background Art */}
+
+      {/* ================= BACKGROUND ================= */}
+
       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+
         {/* Ellipse */}
         <div
           className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.08]"
@@ -1020,42 +1087,34 @@ const Work = () => {
           />
         </motion.div>
 
-        {/* Center Orange Glow */}
+        {/* Center Glow */}
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
-            opacity: [0.02, 0.065, 0.02],
+            opacity: [0.02, 0.06, 0.02],
           }}
           transition={{
             duration: 10,
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute left-1/2 top-1/2 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
+          className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
         />
       </div>
 
       <div className="container mx-auto max-w-6xl px-4">
-        {/* Heading */}
+
+        {/* ================= HEADER ================= */}
+
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 18,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.7,
-          }}
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
           className="mx-auto max-w-2xl text-center"
         >
-          {/* Eyebrow */}
           <div className="mb-3 flex items-center justify-center gap-3">
+
             <motion.span
               animate={{
                 width: [18, 36, 18],
@@ -1086,7 +1145,6 @@ const Work = () => {
             />
           </div>
 
-          {/* Heading */}
           <h2 className="text-2xl font-semibold tracking-[-0.035em] sm:text-3xl lg:text-[2.45rem]">
             Trusted by brands.
             <span className="text-black/30">
@@ -1095,82 +1153,37 @@ const Work = () => {
             </span>
           </h2>
 
-          {/* Description */}
           <p className="mx-auto mt-3 max-w-lg text-xs leading-5 text-black/45 sm:text-sm">
             Working alongside ambitious brands to create stronger
             visibility, marketplace presence and lasting customer trust.
           </p>
         </motion.div>
 
-        {/* Brand Rail */}
-        <div className="relative mt-10">
-          {/* Top Border */}
-          <div className="absolute left-0 right-0 top-0 h-px bg-primary/[0.12]" />
+        {/* ================= BRAND GRID ================= */}
 
-          {/* Bottom Border */}
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-primary/[0.12]" />
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5 lg:gap-6">
 
-          {/* Left Fade */}
-          <div className="pointer-events-none absolute left-0 top-0 z-30 h-full w-24 bg-gradient-to-r from-white via-white/80 to-transparent" />
+          {brands.map((brand, index) => (
+            <BrandCard
+              key={brand.name}
+              brand={brand}
+              index={index}
+            />
+          ))}
 
-          {/* Right Fade */}
-          <div className="pointer-events-none absolute right-0 top-0 z-30 h-full w-24 bg-gradient-to-l from-white via-white/80 to-transparent" />
-
-          {/* Moving Orange Spotlight */}
-          <motion.div
-            animate={{
-              x: ['-100%', '500%'],
-            }}
-            transition={{
-              duration: 14,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            className="pointer-events-none absolute inset-y-0 z-20 w-[200px] -skew-x-[20deg] bg-gradient-to-r from-transparent via-primary/[0.08] to-transparent blur-xl"
-          />
-
-          {/* Continuous Rail */}
-          <div className="overflow-hidden py-4">
-            <div className="animate-brand-rail flex w-max">
-              {/* First Sequence */}
-              {brands.map((brand, index) => (
-                <BrandCard
-                  key={`first-${brand.name}`}
-                  brand={brand}
-                  index={index}
-                />
-              ))}
-
-              {/* Repeated Sequence */}
-              {brands.map((brand, index) => (
-                <BrandCard
-                  key={`second-${brand.name}`}
-                  brand={brand}
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* Footer Indicator */}
+        {/* ================= FOOTER ================= */}
+
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 8,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
+          initial={{ opacity: 0, y: 8 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{
             duration: 0.6,
             delay: 0.2,
           }}
-          className="mt-5 flex items-center justify-center gap-2"
+          className="mt-10 flex items-center justify-center gap-2"
         >
           <motion.span
             animate={{
@@ -1188,33 +1201,8 @@ const Work = () => {
             Growing network
           </span>
         </motion.div>
+
       </div>
-
-      {/* Rail Animation */}
-      <style jsx global>{`
-        @keyframes brandRail {
-          from {
-            transform: translateX(0);
-          }
-
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-brand-rail {
-          animation-name: brandRail;
-          animation-duration: 36s;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-          animation-play-state: running;
-          will-change: transform;
-        }
-
-        .animate-brand-rail:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </section>
   )
 }

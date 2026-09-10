@@ -953,9 +953,9 @@ const Hero = () => {
                 xl:text-[3.9rem]
               "
             >
-              <span className="block">Strategy.</span>
+              <span className="block">Strategy.  Visibility.</span>
 
-              <span className="relative block">
+              {/* <span className="relative block">
                 Visibility.
 
                 <motion.span
@@ -969,7 +969,7 @@ const Hero = () => {
                     ease: [0.16, 1, 0.3, 1],
                   }}
                 />
-              </span>
+              </span> */}
 
               <span className="block text-primary">Growth.</span>
             </motion.h1>
