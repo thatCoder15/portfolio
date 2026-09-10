@@ -42,10 +42,10 @@ const Footer = () => {
             Let&apos;s Grow Together
           </p>
 
-          <h2 className='mx-auto mb-5 max-w-3xl text-white'>
+          <h4 className='mx-auto mb-5 max-w-3xl text-white'>
             Ready to Build a Stronger
             <br className='hidden sm:block' /> Product Presence?
-          </h2>
+          </h4>
 
           <p className='mx-auto mb-8 max-w-2xl text-base leading-7 text-white/60 sm:text-lg'>
             Let&apos;s create a focused growth strategy for your product,

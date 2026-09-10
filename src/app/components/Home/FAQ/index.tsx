@@ -166,9 +166,9 @@ const FAQ = () => {
                 FAQ
               </p>
 
-              <h2 className='text-white'>
+              <h4 className='text-white'>
                 Questions brands usually ask.
-              </h2>
+              </h4>
 
               <p className='mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/75'>
                 Everything you need to know about our services, platforms,

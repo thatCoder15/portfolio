@@ -338,182 +338,255 @@ const Aboutus = () => {
         {/* =========================================================
             INTRO
         ========================================================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7 }}
-          className="mx-auto max-w-5xl text-center"
-        >
-          <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-primary/20 bg-primary/[0.06] px-4 py-2">
-            <span className="h-2 w-2 rounded-full bg-primary" />
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-              About The Achievers
-            </span>
+      <motion.div
+  initial={{ opacity: 0, y: 18 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{
+    duration: 0.65,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  className="mx-auto max-w-6xl"
+>
+  {/* Section label */}
+  <div className="mb-8 flex items-center gap-3">
+    <span className="h-px w-8 bg-primary" />
+
+    <span className="text-xs font-semibold tracking-[0.08em] text-neutral-500">
+      About The Achievers
+    </span>
+  </div>
+
+  {/* Main content */}
+  <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+    {/* Heading */}
+    <div>
+      <h3
+        className="
+          max-w-md
+          text-[2rem]
+          font-semibold
+          leading-[1.2]
+          tracking-[-0.025em]
+          text-neutral-950
+          sm:text-[2.25rem]
+          lg:text-[2.5rem]
+        "
+      >
+        Building brands with
+        <span className="text-primary"> purpose and precision.</span>
+      </h3>
+    </div>
+
+    {/* Content */}
+    <div className="max-w-2xl">
+      <p
+        className="
+          text-[15px]
+          leading-7
+          text-neutral-600
+          sm:text-base
+          sm:leading-7
+        "
+      >
+        The Achievers helps ambitious brands strengthen their digital
+        presence, improve visibility, and connect with the audiences
+        that matter.
+      </p>
+
+      <p
+        className="
+          mt-5
+          text-[14px]
+          leading-6
+          text-neutral-500
+          sm:text-[15px]
+          sm:leading-7
+        "
+      >
+        Our work spans marketplace strategy, digital campaigns, customer feedback, positive ratings and reviews, product visibility, and reputation, helping products build trust, attract more customers, increase sales, and achieve measurable growth.
+      </p>
+
+      {/* Capabilities */}
+      {/* <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-4 border-t border-neutral-200 pt-5 sm:grid-cols-4">
+        {[
+          'Strategy',
+          'Marketplace',
+          'Digital',
+          'Growth',
+        ].map((item) => (
+          <div
+            key={item}
+            className="text-sm font-medium text-neutral-800"
+          >
+            {item}
           </div>
-
-          <h2 className="mx-auto max-w-4xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl lg:text-[3.5rem]">
-            Helping products
-            <br />
-            <span className="text-primary">find their place.</span>
-          </h2>
-
-          <p className="mx-auto mt-7 max-w-4xl text-lg leading-8 text-black/65">
-            The Achievers partners with ambitious brands to strengthen their
-            product presence across leading marketplaces and quick-commerce
-            platforms. From marketplace campaigns and influencer marketing to
-            customer feedback, reputation, and customized growth strategies,
-            we help products build a stronger and more competitive presence.
-          </p>
-
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-black/50">
-            We combine strategy, execution, and channel expertise to identify
-            the right opportunities for every product and turn them into
-            measurable growth initiatives.
-          </p>
-        </motion.div>
-
+        ))}
+      </div> */}
+    </div>
+  </div>
+</motion.div>
         {/* =========================================================
             OUR CAPABILITIES
         ========================================================= */}
         <div className="relative mt-24 lg:mt-32">
-          {/* Section Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            className="mb-12 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between"
-          >
-            <div>
-              <div className="mb-4 flex items-center gap-3">
-                <span className="h-px w-10 bg-primary" />
-                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                  Our Capabilities
-                </span>
-              </div>
-
-              <h3 className="max-w-2xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[3rem]">
-                Where strategy
-                <br />
-                <span className="text-black/40">meets execution.</span>
-              </h3>
-            </div>
-
-            <p className="max-w-md text-base leading-7 text-black/60 lg:pb-1">
-              From visibility and creator campaigns to reputation and growth
-              strategy, we bring together the right channels to help products
-              compete in a crowded marketplace.
-            </p>
-          </motion.div>
-
-          {/* Capability Cards */}
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {services.map((service, index) => (
-              <motion.div
-                key={service.number}
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{
-                  duration: 0.65,
-                  delay: index * 0.08,
-                }}
-                className="group relative overflow-hidden rounded-[28px] border border-black/[0.06] bg-grey p-7 transition-all duration-500 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-8 lg:p-9"
-              >
-                {/* Large Background Number */}
-                <span className="pointer-events-none absolute -right-3 -top-8 text-[150px] font-bold leading-none tracking-tighter text-black/[0.035] transition-all duration-500 group-hover:text-primary/[0.08]">
-                  {service.number}
-                </span>
-
-                {/* Decorative Circle */}
-                <div className="pointer-events-none absolute -right-16 -bottom-16 h-48 w-48 rounded-full border border-primary/10 transition-all duration-700 group-hover:scale-125 group-hover:border-primary/20" />
-
-                <div className="relative z-10">
-                  {/* Top */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-sm font-bold text-white shadow-lg shadow-primary/20">
-                      {service.number}
-                    </div>
-
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-white transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
-                      <span className="text-lg transition-transform duration-300 group-hover:rotate-45">
-                        ↗
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Accent */}
-                  <div className="mt-8 h-1 w-10 rounded-full bg-primary transition-all duration-500 group-hover:w-20" />
-
-                  {/* Content */}
-                  <h4 className="mt-6 text-2xl font-semibold tracking-tight">
-                    {service.title}
-                  </h4>
-
-                  <p className="mt-4 max-w-xl text-base leading-7 text-black/60">
-                    {service.description}
-                  </p>
-
-                  {/* Bottom */}
-                  <div className="mt-8 flex items-center justify-between border-t border-black/[0.07] pt-5">
-                    <span className="text-xs font-semibold uppercase tracking-[0.18em] text-black/40">
-                      The Achievers
-                    </span>
-
-                    <span className="text-xs font-medium text-primary">
-                      Strategy + Execution
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
           {/* =====================================================
               PROCESS STRIP
           ===================================================== */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            className="mt-6 overflow-hidden rounded-[28px] bg-darkmode"
+  initial={{ opacity: 0, y: 15 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.3 }}
+  transition={{
+    duration: 0.6,
+    ease: [0.16, 1, 0.3, 1],
+  }}
+  className="mx-auto mt-10 w-full max-w-5xl px-2 sm:mt-12"
+>
+  <div className="relative pt-12">
+    {/* Base line */}
+    <div className="absolute left-[4%] right-[4%] top-[19px] h-px bg-neutral-200" />
+
+    {/* Animated orange fire trail */}
+    <motion.div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        top-[17px]
+        h-[4px]
+        w-[15%]
+        rounded-full
+        bg-primary
+        blur-[0.5px]
+        shadow-[0_0_6px_rgba(255,100,0,0.7),0_0_16px_rgba(255,100,0,0.35)]
+      "
+      animate={{
+        left: ['3%', '82%'],
+        opacity: [0, 1, 1, 0],
+      }}
+      transition={{
+        duration: 3.8,
+        repeat: Infinity,
+        ease: [0.45, 0, 0.55, 1],
+        times: [0, 0.08, 0.88, 1],
+      }}
+    />
+
+    {/* Tiny hot core inside the moving trail */}
+    <motion.div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        top-[14px]
+        h-[10px]
+        w-[10px]
+        rounded-full
+        bg-primary
+        blur-[3px]
+      "
+      animate={{
+        left: ['4%', '94%'],
+        opacity: [0, 0.9, 0.9, 0],
+        scale: [0.6, 1.2, 1, 0.5],
+      }}
+      transition={{
+        duration: 3.8,
+        repeat: Infinity,
+        ease: [0.45, 0, 0.55, 1],
+        times: [0, 0.1, 0.88, 1],
+      }}
+    />
+
+    {/* Points */}
+    <div className="relative grid grid-cols-4">
+      {[
+        {
+          number: '01',
+          title: 'Understand',
+          description: 'The opportunity',
+        },
+        {
+          number: '02',
+          title: 'Strategize',
+          description: 'The right direction',
+        },
+        {
+          number: '03',
+          title: 'Execute',
+          description: 'Across key channels',
+        },
+        {
+          number: '04',
+          title: 'Grow',
+          description: 'With continuous insight',
+        },
+      ].map((item, index) => (
+        <motion.div
+          key={item.number}
+          className="group relative flex flex-col items-center"
+        >
+          {/* Point */}
+          <motion.div
+            className="
+              relative z-10
+              flex h-[9px] w-[9px]
+              items-center justify-center
+              rounded-full
+              bg-neutral-300
+            "
+            animate={{
+              backgroundColor: [
+                'rgb(212,212,212)',
+                'rgb(255,100,0)',
+                'rgb(212,212,212)',
+              ],
+              boxShadow: [
+                '0 0 0px rgba(255,100,0,0)',
+                '0 0 10px rgba(255,100,0,0.75)',
+                '0 0 0px rgba(255,100,0,0)',
+              ],
+              scale: [1, 1.35, 1],
+            }}
+            transition={{
+              duration: 3.8,
+              repeat: Infinity,
+              delay: index * 0.95,
+              ease: 'easeInOut',
+            }}
+          />
+
+          {/* Content */}
+          <motion.div
+            className="mt-4 text-center"
+            animate={{
+              opacity: [0.55, 1, 0.55],
+            }}
+            transition={{
+              duration: 3.8,
+              repeat: Infinity,
+              delay: index * 0.95,
+              ease: 'easeInOut',
+            }}
           >
-            <div className="grid grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-              {[
-                ['01', 'Understand', 'The product & opportunity'],
-                ['02', 'Strategize', 'The right growth approach'],
-                ['03', 'Execute', 'Across relevant channels'],
-                ['04', 'Grow', 'With continuous optimization'],
-              ].map(([number, title, description], index) => (
-                <div
-                  key={number}
-                  className="group relative p-6 transition-colors duration-300 hover:bg-white/[0.04] lg:p-7"
-                >
-                  <div className="mb-6 flex items-center justify-between">
-                    <span className="text-xs font-bold tracking-[0.2em] text-primary">
-                      {number}
-                    </span>
+            <span className="text-[9px] font-medium tracking-[0.12em] text-primary/70">
+              {item.number}
+            </span>
 
-                    {index < 3 && (
-                      <span className="hidden text-lg text-white/20 lg:block">
-                        →
-                      </span>
-                    )}
-                  </div>
+            <h4 className="mt-1 text-[13px] font-semibold tracking-[-0.01em] text-neutral-900 sm:text-sm">
+              {item.title}
+            </h4>
 
-                  <h5 className="text-lg font-semibold text-white">
-                    {title}
-                  </h5>
-
-                  <p className="mt-2 text-sm leading-6 text-white/45">
-                    {description}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <p className="mt-1 text-[10px] leading-4 text-neutral-400 sm:text-[11px]">
+              {item.description}
+            </p>
           </motion.div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</motion.div>
         </div>
 
         {/* =========================================================
@@ -595,7 +668,7 @@ const Aboutus = () => {
         {/* =========================================================
             CLOSING STATEMENT
         ========================================================= */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -617,7 +690,7 @@ const Aboutus = () => {
             the right audiences, and build the foundation for sustainable
             marketplace growth.
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

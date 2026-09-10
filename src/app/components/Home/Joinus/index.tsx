@@ -21,11 +21,11 @@ const Join = () => {
             Let&apos;s Talk
           </p>
 
-          <h2>
+          <h4>
             Have a Product?
             <br className='hidden sm:block' />
             <span className='text-primary'> Let&apos;s Grow It.</span>
-          </h2>
+          </h4>
 
           <p className='mx-auto mt-6 max-w-2xl text-lg leading-8 text-black/60'>
             Whether you&apos;re looking to improve marketplace visibility,

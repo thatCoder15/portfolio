@@ -259,13 +259,13 @@ const Dedicated = () => {
               Leadership
             </p>
 
-            <h2 className="relative leading-tight">
+            <h4 className="relative leading-tight">
               Driven By Strategy.
               <br />
               <span className="text-primary">
                 Built For Growth.
               </span>
-            </h2>
+            </h4>
 
             <p className="mt-7 max-w-2xl text-xl leading-9 text-black/65">
               Shweta Jain brings strong expertise in digital commerce, brand
