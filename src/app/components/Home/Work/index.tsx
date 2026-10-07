@@ -665,7 +665,7 @@ const brands = [
   { name: 'KAHARA', logo: '/images/brands/brand-05.png' },
   { name: 'YADAV CRAFT', logo: '/images/brands/brand-06.png' },
   { name: 'MaheTri', logo: '/images/brands/brand-07.png' },
-  { name: 'SALTY', logo: '/images/brands/brand-08.png' },
+  { name: 'MIZUNA', logo: '/images/brands/brand-08.png' },
   { name: 'iSTAR', logo: '/images/brands/brand-09.png' },
   { name: 'On Time Octus', logo: '/images/brands/brand-10.png' },
   { name: 'Delavala', logo: '/images/brands/brand-11.png' },
