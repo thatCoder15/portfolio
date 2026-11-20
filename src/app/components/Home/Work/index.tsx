@@ -652,13 +652,575 @@
 
 // export default Work
 
+// 'use client'
+
+// import Image from 'next/image'
+// import { motion } from 'framer-motion'
+
+// const brands = [
+//   { name: 'Society Tea', logo: '/images/brands/brand-01.png' },
+//   { name: 'DeoDap', logo: '/images/brands/brand-02.png' },
+//   { name: 'Glivary', logo: '/images/brands/brand-03.png' },
+//   { name: 'Luella', logo: '/images/brands/brand-04.png' },
+//   { name: 'KAHARA', logo: '/images/brands/brand-05.png' },
+//   { name: 'YADAV CRAFT', logo: '/images/brands/brand-06.png' },
+//   { name: 'MaheTri', logo: '/images/brands/brand-07.png' },
+//   { name: 'MIZUNA', logo: '/images/brands/brand-08.png' },
+//   { name: 'iSTAR', logo: '/images/brands/brand-09.png' },
+//   { name: 'On Time Octus', logo: '/images/brands/brand-10.png' },
+//   { name: 'Delavala', logo: '/images/brands/brand-11.png' },
+//   { name: 'Vyoox', logo: '/images/brands/brand-12.png' },
+//   { name: 'Boldfit', Logo: '/images/brands/brand-13.png'}
+// ]
+
+// const BrandCard = ({
+//   brand,
+//   index,
+// }: {
+//   brand: (typeof brands)[number]
+//   index: number
+// }) => {
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, y: 25 }}
+//       whileInView={{ opacity: 1, y: 0 }}
+//       viewport={{ once: true, margin: '-50px' }}
+//       transition={{
+//         duration: 0.55,
+//         delay: index * 0.05,
+//         ease: 'easeOut',
+//       }}
+//       whileHover={{ y: -8 }}
+//       className="group relative"
+//     >
+//       <div
+//         className="
+//           relative
+//           h-[155px]
+//           overflow-hidden
+//           rounded-[22px]
+//           border border-black/[0.07]
+//           bg-white
+//           shadow-[0_8px_30px_rgba(0,0,0,0.045)]
+//           transition-all
+//           duration-500
+//           group-hover:border-primary/30
+//           group-hover:shadow-[0_20px_50px_rgba(249,115,22,0.18)]
+//           sm:h-[175px]
+//         "
+//       >
+
+//         {/* Ambient Glow */}
+//         <motion.div
+//           className="
+//             pointer-events-none
+//             absolute
+//             -right-12
+//             -top-12
+//             h-32
+//             w-32
+//             rounded-full
+//             bg-primary
+//             blur-3xl
+//           "
+//           animate={{
+//             scale: [1, 1.15, 1],
+//             opacity: [0.025, 0.07, 0.025],
+//           }}
+//           transition={{
+//             duration: 4,
+//             repeat: Infinity,
+//             ease: 'easeInOut',
+//             delay: index * 0.15,
+//           }}
+//         />
+
+//         {/* Hover Fire Glow */}
+//         <motion.div
+//           className="
+//             pointer-events-none
+//             absolute
+//             left-1/2
+//             top-1/2
+//             h-24
+//             w-24
+//             -translate-x-1/2
+//             -translate-y-1/2
+//             rounded-full
+//             bg-primary/40
+//             blur-[28px]
+//           "
+//           initial={{ opacity: 0, scale: 0.4 }}
+//           whileHover={{
+//             opacity: 1,
+//             scale: 1.35,
+//           }}
+//           transition={{
+//             duration: 0.5,
+//             ease: 'easeOut',
+//           }}
+//         />
+
+//         {/* Fire Particles */}
+//         <div className="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+//           {[...Array(7)].map((_, i) => (
+//             <motion.span
+//               key={i}
+//               className="absolute h-1.5 w-1.5 rounded-full bg-primary"
+//               style={{
+//                 left: `${25 + i * 8}%`,
+//                 top: `${55 - (i % 3) * 8}%`,
+//               }}
+//               animate={{
+//                 y: [0, -25 - (i % 3) * 12, -45],
+//                 x: [0, (i % 2 ? 8 : -8), i % 2 ? 14 : -14],
+//                 opacity: [0, 0.8, 0],
+//                 scale: [0.5, 1, 0.2],
+//               }}
+//               transition={{
+//                 duration: 1 + (i % 3) * 0.2,
+//                 repeat: Infinity,
+//                 delay: i * 0.08,
+//                 ease: 'easeOut',
+//               }}
+//             />
+//           ))}
+//         </div>
+
+//         {/* Number */}
+//         <span className="absolute left-4 top-4 z-20 text-[9px] font-bold tracking-[0.2em] text-black/20">
+//           {String(index + 1).padStart(2, '0')}
+//         </span>
+
+//         {/* Partner */}
+//         <div className="absolute right-4 top-4 z-20 flex items-center gap-1.5">
+//           <motion.span
+//             className="h-1.5 w-1.5 rounded-full bg-primary"
+//             animate={{
+//               scale: [1, 1.5, 1],
+//               opacity: [0.35, 1, 0.35],
+//             }}
+//             transition={{
+//               duration: 1.8,
+//               repeat: Infinity,
+//               delay: index * 0.1,
+//             }}
+//           />
+
+//           <span className="text-[7px] font-bold uppercase tracking-[0.16em] text-black/25">
+//             Partner
+//           </span>
+//         </div>
+
+//         {/* Logo Area */}
+       
+// {/* Logo Area */}
+// <div className="absolute inset-x-0 top-0 flex h-[115px] items-center justify-center px-8 pt-4 sm:h-[132px]">
+
+//   {/* Logo Glow */}
+//   <div
+//     className="
+//       pointer-events-none
+//       absolute
+//       h-24
+//       w-24
+//       rounded-full
+//       bg-primary/15
+//       opacity-0
+//       blur-2xl
+//       transition-all
+//       duration-500
+//       group-hover:scale-150
+//       group-hover:opacity-100
+//     "
+//   />
+
+//   <motion.div
+//     className="
+//       relative
+//       z-10
+//       flex
+//       h-[76px]
+//       w-[76px]
+//       items-center
+//       justify-center
+//       overflow-hidden
+//       rounded-full
+//       border
+//       border-black/[0.07]
+//       bg-white
+//       shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+//       transition-all
+//       duration-500
+//       group-hover:border-primary/30
+//       group-hover:shadow-[0_10px_30px_rgba(249,115,22,0.18)]
+//       sm:h-[88px]
+//       sm:w-[88px]
+//     "
+//     whileHover={{
+//       scale: 1.08,
+//       rotate: 2,
+//     }}
+//     transition={{
+//       type: 'spring',
+//       stiffness: 250,
+//       damping: 15,
+//     }}
+//   >
+
+//     {/* Inner Ring */}
+//     <div
+//       className="
+//         pointer-events-none
+//         absolute
+//         inset-[4px]
+//         rounded-full
+//         border
+//         border-black/[0.045]
+//         transition-all
+//         duration-500
+//         group-hover:border-primary/20
+//       "
+//     />
+
+//     {/* Logo */}
+//     <Image
+//       src={brand.logo}
+//       alt={`${brand.name} logo`}
+//       width={120}
+//       height={120}
+//       className="
+//         relative
+//         z-10
+//         h-[52px]
+//         w-[52px]
+//         rounded-full
+//         object-contain
+//         p-2
+//         transition-all
+//         duration-500
+//         group-hover:scale-110
+//         group-hover:drop-shadow-[0_6px_15px_rgba(249,115,22,0.25)]
+//         sm:h-[62px]
+//         sm:w-[62px]
+//       "
+//     />
+
+//     {/* Subtle Shine */}
+//     <motion.div
+//       initial={{ x: '-150%', rotate: 25 }}
+//       whileHover={{ x: '150%' }}
+//       transition={{
+//         duration: 0.7,
+//         ease: 'easeInOut',
+//       }}
+//       className="
+//         pointer-events-none
+//         absolute
+//         inset-y-0
+//         z-20
+//         w-5
+//         bg-gradient-to-r
+//         from-transparent
+//         via-white/70
+//         to-transparent
+//         blur-[2px]
+//       "
+//     />
+
+//   </motion.div>
+// </div>
+
+
+
+//         {/* Hover Shine */}
+//         <motion.div
+//           initial={{ x: '-180%' }}
+//           whileHover={{ x: '300%' }}
+//           transition={{
+//             duration: 0.8,
+//             ease: 'easeInOut',
+//           }}
+//           className="
+//             pointer-events-none
+//             absolute
+//             inset-y-0
+//             z-30
+//             w-[35%]
+//             -skew-x-[20deg]
+//             bg-gradient-to-r
+//             from-transparent
+//             via-white/70
+//             to-transparent
+//           "
+//         />
+
+//         {/* Bottom Info */}
+//         <div
+//           className="
+//             absolute
+//             bottom-0
+//             left-0
+//             right-0
+//             z-20
+//             flex
+//             items-center
+//             justify-between
+//             border-t
+//             border-black/[0.06]
+//             bg-white/90
+//             px-4
+//             py-3
+//             backdrop-blur-md
+//             transition-all
+//             duration-500
+//             group-hover:border-primary/20
+//             group-hover:bg-white
+//           "
+//         >
+//           <div>
+//             <span className="block text-[8px] font-semibold uppercase tracking-[0.18em] text-black/25">
+//               Brand
+//             </span>
+
+//             <span className="mt-0.5 block truncate text-[13px] font-bold uppercase tracking-[0.08em] text-black/55 transition-colors duration-300 group-hover:text-primary sm:text-[14px]">
+//               {brand.name}
+//             </span>
+//           </div>
+
+//           {/* Arrow */}
+//           <motion.span
+//             className="
+//               flex
+//               h-7
+//               w-7
+//               items-center
+//               justify-center
+//               rounded-full
+//               border
+//               border-primary/20
+//               bg-primary/[0.06]
+//               text-[14px]
+//               text-primary
+//               transition-all
+//               duration-300
+//               group-hover:border-primary
+//               group-hover:bg-primary
+//               group-hover:text-white
+//               group-hover:shadow-[0_0_18px_rgba(249,115,22,0.45)]
+//             "
+//             whileHover={{
+//               rotate: 45,
+//               scale: 1.1,
+//             }}
+//           >
+//             ↗
+//           </motion.span>
+//         </div>
+
+//         {/* Animated Orange Border */}
+//         <motion.div
+//           className="
+//             absolute
+//             bottom-0
+//             left-0
+//             z-40
+//             h-[2px]
+//             bg-primary
+//             shadow-[0_0_12px_rgba(249,115,22,0.7)]
+//           "
+//           initial={{ width: '10%' }}
+//           animate={{
+//             width: ['10%', '35%', '10%'],
+//           }}
+//           transition={{
+//             duration: 3.5,
+//             repeat: Infinity,
+//             ease: 'easeInOut',
+//             delay: index * 0.15,
+//           }}
+//         />
+//       </div>
+//     </motion.div>
+//   )
+// }
+
+// const Work = () => {
+//   return (
+//     <section
+//       id="Brands"
+//       className="relative overflow-hidden py-16 lg:py-20"
+//     >
+
+//       {/* ================= BACKGROUND ================= */}
+
+//       <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+
+//         {/* Ellipse */}
+//         <div
+//           className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-[0.08]"
+//           style={{
+//             backgroundImage:
+//               "url('/images/wework/elipse.svg')",
+//           }}
+//         />
+
+//         {/* Vector */}
+//         <motion.div
+//           animate={{
+//             x: ['-4%', '4%', '-4%'],
+//             y: ['-2%', '3%', '-2%'],
+//             rotate: [0, 2, 0, -2, 0],
+//           }}
+//           transition={{
+//             duration: 20,
+//             repeat: Infinity,
+//             ease: 'easeInOut',
+//           }}
+//           className="absolute -right-24 top-0 h-[430px] w-[430px] opacity-[0.1]"
+//         >
+//           <div
+//             className="h-full w-full bg-contain bg-right-top bg-no-repeat"
+//             style={{
+//               backgroundImage:
+//                 "url('/images/wework/vector.svg')",
+//             }}
+//           />
+//         </motion.div>
+
+//         {/* Center Glow */}
+//         <motion.div
+//           animate={{
+//             scale: [1, 1.2, 1],
+//             opacity: [0.02, 0.06, 0.02],
+//           }}
+//           transition={{
+//             duration: 10,
+//             repeat: Infinity,
+//             ease: 'easeInOut',
+//           }}
+//           className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-3xl"
+//         />
+//       </div>
+
+//       <div className="container mx-auto max-w-6xl px-4">
+
+//         {/* ================= HEADER ================= */}
+
+//         <motion.div
+//           initial={{ opacity: 0, y: 18 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.7 }}
+//           className="mx-auto max-w-2xl text-center"
+//         >
+//           <div className="mb-3 flex items-center justify-center gap-3">
+
+//             <motion.span
+//               animate={{
+//                 width: [18, 36, 18],
+//               }}
+//               transition={{
+//                 duration: 3,
+//                 repeat: Infinity,
+//                 ease: 'easeInOut',
+//               }}
+//               className="h-px bg-primary"
+//             />
+
+//             <span className="text-[9px] font-bold uppercase tracking-[0.24em] text-primary">
+//               Brands We Work With
+//             </span>
+
+//             <motion.span
+//               animate={{
+//                 width: [18, 36, 18],
+//               }}
+//               transition={{
+//                 duration: 3,
+//                 repeat: Infinity,
+//                 ease: 'easeInOut',
+//                 delay: 0.5,
+//               }}
+//               className="h-px bg-primary"
+//             />
+//           </div>
+
+//           <h2 className="text-2xl font-semibold tracking-[-0.035em] sm:text-3xl lg:text-[2.45rem]">
+//             Trusted by brands.
+//             <span className="text-black/30">
+//               {' '}
+//               Built for growth.
+//             </span>
+//           </h2>
+
+//           <p className="mx-auto mt-3 max-w-lg text-xs leading-5 text-black/45 sm:text-sm">
+//             Working alongside ambitious brands to create stronger
+//             visibility, marketplace presence and lasting customer trust.
+//           </p>
+//         </motion.div>
+
+//         {/* ================= BRAND GRID ================= */}
+
+//         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5 lg:gap-6">
+
+//           {brands.map((brand, index) => (
+//             <BrandCard
+//               key={brand.name}
+//               brand={brand}
+//               index={index}
+//             />
+//           ))}
+
+//         </div>
+
+//         {/* ================= FOOTER ================= */}
+
+//         <motion.div
+//           initial={{ opacity: 0, y: 8 }}
+//           whileInView={{ opacity: 1, y: 0 }}
+//           viewport={{ once: true }}
+//           transition={{
+//             duration: 0.6,
+//             delay: 0.2,
+//           }}
+//           className="mt-10 flex items-center justify-center gap-2"
+//         >
+//           <motion.span
+//             animate={{
+//               scale: [1, 1.6, 1],
+//               opacity: [0.3, 1, 0.3],
+//             }}
+//             transition={{
+//               duration: 2,
+//               repeat: Infinity,
+//             }}
+//             className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(249,115,22,0.6)]"
+//           />
+
+//           <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-black/25">
+//             Growing network
+//           </span>
+//         </motion.div>
+
+//       </div>
+//     </section>
+//   )
+// }
+
+// export default Work
+
 'use client'
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const brands = [
-  { name: 'Boldfit', logo: '/images/brands/brand-01.png' },
+  {
+    name: 'Society Tea',
+    logo: '/images/brands/brand-01.png',
+    cover: '/images/brands/cover.png',
+  },
   { name: 'DeoDap', logo: '/images/brands/brand-02.png' },
   { name: 'Glivary', logo: '/images/brands/brand-03.png' },
   { name: 'Luella', logo: '/images/brands/brand-04.png' },
@@ -670,6 +1232,7 @@ const brands = [
   { name: 'On Time Octus', logo: '/images/brands/brand-10.png' },
   { name: 'Delavala', logo: '/images/brands/brand-11.png' },
   { name: 'Vyoox', logo: '/images/brands/brand-12.png' },
+  { name: 'Boldfit', logo: '/images/brands/brand-13.png' },
 ]
 
 const BrandCard = ({
@@ -708,7 +1271,6 @@ const BrandCard = ({
           sm:h-[175px]
         "
       >
-
         {/* Ambient Glow */}
         <motion.div
           className="
@@ -772,7 +1334,7 @@ const BrandCard = ({
               }}
               animate={{
                 y: [0, -25 - (i % 3) * 12, -45],
-                x: [0, (i % 2 ? 8 : -8), i % 2 ? 14 : -14],
+                x: [0, i % 2 ? 8 : -8, i % 2 ? 14 : -14],
                 opacity: [0, 0.8, 0],
                 scale: [0.5, 1, 0.2],
               }}
@@ -812,125 +1374,182 @@ const BrandCard = ({
         </div>
 
         {/* Logo Area */}
-       
-{/* Logo Area */}
-<div className="absolute inset-x-0 top-0 flex h-[115px] items-center justify-center px-8 pt-4 sm:h-[132px]">
+        <div className="absolute inset-x-0 top-0 flex h-[115px] items-center justify-center px-8 pt-4 sm:h-[132px]">
 
-  {/* Logo Glow */}
-  <div
-    className="
-      pointer-events-none
-      absolute
-      h-24
-      w-24
-      rounded-full
-      bg-primary/15
-      opacity-0
-      blur-2xl
-      transition-all
-      duration-500
-      group-hover:scale-150
-      group-hover:opacity-100
-    "
-  />
+          {/* Logo Glow */}
+          <div
+            className="
+              pointer-events-none
+              absolute
+              h-24
+              w-24
+              rounded-full
+              bg-primary/15
+              opacity-0
+              blur-2xl
+              transition-all
+              duration-500
+              group-hover:scale-150
+              group-hover:opacity-100
+            "
+          />
 
-  <motion.div
-    className="
-      relative
-      z-10
-      flex
-      h-[76px]
-      w-[76px]
-      items-center
-      justify-center
-      overflow-hidden
-      rounded-full
-      border
-      border-black/[0.07]
-      bg-white
-      shadow-[0_8px_25px_rgba(0,0,0,0.06)]
-      transition-all
-      duration-500
-      group-hover:border-primary/30
-      group-hover:shadow-[0_10px_30px_rgba(249,115,22,0.18)]
-      sm:h-[88px]
-      sm:w-[88px]
-    "
-    whileHover={{
-      scale: 1.08,
-      rotate: 2,
-    }}
-    transition={{
-      type: 'spring',
-      stiffness: 250,
-      damping: 15,
-    }}
-  >
+          <motion.div
+            className="
+              relative
+              z-10
+              flex
+              h-[76px]
+              w-[76px]
+              items-center
+              justify-center
+              overflow-hidden
+              rounded-full
+              border
+              border-black/[0.07]
+              bg-white
+              shadow-[0_8px_25px_rgba(0,0,0,0.06)]
+              transition-all
+              duration-500
+              group-hover:border-primary/30
+              group-hover:shadow-[0_10px_30px_rgba(249,115,22,0.18)]
+              sm:h-[88px]
+              sm:w-[88px]
+            "
+            whileHover={{
+              scale: 1.08,
+              rotate: 2,
+            }}
+            transition={{
+              type: 'spring',
+              stiffness: 250,
+              damping: 15,
+            }}
+          >
+            {/* Inner Ring */}
+            <div
+              className="
+                pointer-events-none
+                absolute
+                inset-[4px]
+                z-20
+                rounded-full
+                border
+                border-black/[0.045]
+                transition-all
+                duration-500
+                group-hover:border-primary/20
+              "
+            />
 
-    {/* Inner Ring */}
-    <div
-      className="
-        pointer-events-none
-        absolute
-        inset-[4px]
-        rounded-full
-        border
-        border-black/[0.045]
-        transition-all
-        duration-500
-        group-hover:border-primary/20
-      "
-    />
+            {/* Society Tea Logo + Cover Crossfade */}
+            {brand.cover ? (
+              <div className="absolute inset-0">
 
-    {/* Logo */}
-    <Image
-      src={brand.logo}
-      alt={`${brand.name} logo`}
-      width={120}
-      height={120}
-      className="
-        relative
-        z-10
-        h-[52px]
-        w-[52px]
-        rounded-full
-        object-contain
-        p-2
-        transition-all
-        duration-500
-        group-hover:scale-110
-        group-hover:drop-shadow-[0_6px_15px_rgba(249,115,22,0.25)]
-        sm:h-[62px]
-        sm:w-[62px]
-      "
-    />
+                {/* Cover Image */}
+                <motion.div
+                  className="absolute inset-0 z-10"
+                  animate={{
+                    opacity: [0, 1, 0, 0],
+                  }}
+                  transition={{
+                    duration: 6,
+                    times: [0, 0.5, 0.85, 1],
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  <Image
+                    src={brand.cover}
+                    alt={`${brand.name} brand showcase`}
+                    fill
+                    sizes="88px"
+                    className="
+                      rounded-full
+                      object-contain
+                      p-1
+                    "
+                  />
+                </motion.div>
 
-    {/* Subtle Shine */}
-    <motion.div
-      initial={{ x: '-150%', rotate: 25 }}
-      whileHover={{ x: '150%' }}
-      transition={{
-        duration: 0.7,
-        ease: 'easeInOut',
-      }}
-      className="
-        pointer-events-none
-        absolute
-        inset-y-0
-        z-20
-        w-5
-        bg-gradient-to-r
-        from-transparent
-        via-white/70
-        to-transparent
-        blur-[2px]
-      "
-    />
+                {/* Original Logo */}
+                <motion.div
+                  className="absolute inset-0 z-10"
+                  animate={{
+                    opacity: [1, 0, 1, 1],
+                  }}
+                  transition={{
+                    duration: 6,
+                    times: [0, 0.5, 0.85, 1],
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                  }}
+                >
+                  <Image
+                    src={brand.logo}
+                    alt={`${brand.name} logo`}
+                    fill
+                    sizes="88px"
+                    className="
+                      rounded-full
+                      object-contain
+                      p-2
+                      transition-all
+                      duration-500
+                      group-hover:drop-shadow-[0_6px_15px_rgba(249,115,22,0.25)]
+                    "
+                  />
+                </motion.div>
 
-  </motion.div>
-</div>
+              </div>
+            ) : (
+              /* Other Brand Logos */
+              <Image
+                src={brand.logo}
+                alt={`${brand.name} logo`}
+                width={120}
+                height={120}
+                className="
+                  relative
+                  z-10
+                  h-[52px]
+                  w-[52px]
+                  rounded-full
+                  object-contain
+                  p-2
+                  transition-all
+                  duration-500
+                  group-hover:scale-110
+                  group-hover:drop-shadow-[0_6px_15px_rgba(249,115,22,0.25)]
+                  sm:h-[62px]
+                  sm:w-[62px]
+                "
+              />
+            )}
 
-
+            {/* Subtle Shine */}
+            <motion.div
+              initial={{ x: '-150%', rotate: 25 }}
+              whileHover={{ x: '150%' }}
+              transition={{
+                duration: 0.7,
+                ease: 'easeInOut',
+              }}
+              className="
+                pointer-events-none
+                absolute
+                inset-y-0
+                z-30
+                w-5
+                bg-gradient-to-r
+                from-transparent
+                via-white/70
+                to-transparent
+                blur-[2px]
+              "
+            />
+          </motion.div>
+        </div>
 
         {/* Hover Shine */}
         <motion.div
